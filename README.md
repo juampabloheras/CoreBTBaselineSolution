@@ -18,6 +18,11 @@ for Multimodal Brain Tumor Typing</h1>
 <tr>
 <td>
 
+Juampablo E. Heras Rivera†, Daniel K Low†, Wen-wai Yim, Jacob Ruzevick, Xavier Xiong, Mehmet Kurt*, Asma Ben Abacha*
+
+<sub>† Shared first authorship</sub>  
+<sub>* Shared last authorship</sub>
+
 **[KurtLab, University of Washington](https://www.kurtlab.com/)** <br/>
 **[Microsoft Health AI, Microsoft](https://www.microsoft.com/en-us/research/lab/microsoft-health-futures/)**
 
