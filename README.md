@@ -14,10 +14,9 @@ for Multimodal Brain Tumor Typing</h1>
   </span>
 </p>
 
-Juampablo E. Heras Rivera†, Daniel K Low†, Wen-wai Yim, Jacob Ruzevick, Xavier Xiong, Mehmet Kurt*, Asma Ben Abacha*
+Juampablo E. Heras Rivera†, Daniel K Low†, Wen-wai Yim, Jacob Ruzevick, Xavier Xiong, Mehmet Kurt*, Asma Ben Abacha* 
 
-† Shared first authorship
-<sub>* Shared last authorship</sub>
+† Equal contribution, * Shared last authorship
 
 
 
