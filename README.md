@@ -1,1 +1,60 @@
-# CoreBTBaselineSolution
+<h1 align="center">CoRe-BT: Joint Radiology-Pathology Learning
+for Multimodal Brain Tumor Typing</h1>
+<p align="center">
+    <a href="#https://www.imageclef.org/2026/medical/mediqa-coret">Challenge Description</a> |
+    <a href="https://ai4media-bench.aimultimedialab.ro/competitions/6/">Registration</a> |
+    <a href="assets/manuscript.pdf">Manuscript</a>
+    <!-- <a href="#bibtex">BibTeX</a> | -->
+    
+</p>
+
+<p align="center">
+  <span style="background-color: white; padding: 20px; display: inline-block;">
+    <img src="assets/corebt_figure.png" width="900">
+  </span>
+</p>
+
+<table>
+<tr>
+<td>
+
+**[KurtLab, University of Washington](https://www.kurtlab.com/)** <br/>
+**[Microsoft Health AI, Microsoft](https://www.microsoft.com/en-us/research/lab/microsoft-health-futures/)**
+
+</td>
+<!-- <td width="200"></td> spacer column -->
+<td align="right">
+  <img src="assets/affiliations.png" width="220" alt="BTReport affiliations">
+</td>
+</tr>
+</table>
+
+
+<h2 align="center">Repo Structure</h2>
+
+<table align="center">
+<tr>
+<td><strong><a href="./CLAM/">CLAM/</a></strong></td>
+<td>Data preprocessing and whole-slide tiling utilities. Includes custom artifact removal using HSV color-based segmentation and tiling pipelines for WSI patch extraction.</td>
+</tr>
+
+<tr>
+<td><strong><a href="./gigapath/">gigapath/</a></strong></td>
+<td>Whole-slide histopathology embedding pipeline. Uses tiles generated from CLAM to compute slide-level embeddings via the Prov-GigaPath foundation model.</td>
+</tr>
+
+<tr>
+<td><strong><a href="./NeuroVFM/">NeuroVFM/</a></strong></td>
+<td>MRI foundation model framework for multi-sequence brain MRI embedding. Produces subject-level embeddings from T1, T1c, T2, and FLAIR sequences.</td>
+</tr>
+
+<tr>
+<td><strong><a href="./dataset_utils/">dataset_utils/</a></strong></td>
+<td>Dataset construction, subject matching, metadata processing, and split generation utilities.</td>
+</tr>
+
+<tr>
+<td><strong><a href="./experiments/">experiments/</a></strong></td>
+<td>Scripts for multimodal embedding fusion and downstream tumor typing experiments, including modality ablation studies and evaluation pipelines.</td>
+</tr>
+</table>
