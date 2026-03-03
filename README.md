@@ -1,7 +1,7 @@
 <h1 align="center">CoRe-BT: Joint Radiology-Pathology Learning
 for Multimodal Brain Tumor Typing</h1>
 <p align="center">
-    <a href="#https://www.imageclef.org/2026/medical/mediqa-coret">Challenge Description</a> |
+    <a href="https://www.imageclef.org/2026/medical/mediqa-coret">Challenge Description</a> |
     <a href="https://ai4media-bench.aimultimedialab.ro/competitions/6/">Registration</a> |
     <a href="assets/manuscript.pdf">Manuscript</a>
     <!-- <a href="#bibtex">BibTeX</a> | -->
