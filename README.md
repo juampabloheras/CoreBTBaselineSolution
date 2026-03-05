@@ -44,7 +44,7 @@ Juampablo E. Heras Rivera†, Daniel K Low†, Wen-wai Yim, Jacob Ruzevick, Xavi
 <h2 align="center">Evaluation</h2>
 
 ### Command
-
+We evaluate model predictions with following command:
 ```bash
 python3 eval/evaluate_predictions.py \
   --submission_csv example_submission.csv \ # Path to your model's predictions csv
@@ -56,7 +56,7 @@ python3 eval/evaluate_predictions.py \
 
 ### Inputs
 
-The submission file provided via `--submission_csv` must be a CSV with one row per subject, see `eval/example_submission.csv` for an example, and `eval/corebt_sharedtest_groundtruth_alltasks_trainval.csv` to understand how classes are defined in the training split.
+The submission file provided via `--submission_csv` must be a CSV with one row per subject, see `eval/example_submission.csv` for an example, and `eval/corebt_groundtruth_devset.csv` to understand how classes are defined in the training split.
 
 Expected structure:
 
