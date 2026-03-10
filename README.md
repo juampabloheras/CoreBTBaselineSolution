@@ -1,9 +1,8 @@
-<h1 align="center">CoRe-BT: Joint Radiology-Pathology Learning
-for Multimodal Brain Tumor Typing</h1>
+<h1 align="center">CoRe-BT: A Multimodal Radiology-Pathology-Text Benchmark for Robust Brain Tumor Typing </h1>
 <p align="center">
     <a href="https://www.imageclef.org/2026/medical/mediqa-core">Challenge Description</a> |
     <a href="https://ai4media-bench.aimultimedialab.ro/competitions/6/">Registration</a> |
-    <a href="assets/manuscript.pdf">Manuscript</a>
+    <a href="https://arxiv.org/pdf/2603.03618">Manuscript</a>
     <!-- <a href="#bibtex">BibTeX</a> | -->
     
 </p>
@@ -37,6 +36,71 @@ Juampablo E. Heras Rivera†, Daniel K Low†, Wen-wai Yim, Jacob Ruzevick, Xavi
 </tr>
 </table>
 </div>
+
+
+
+
+
+![-----------------------------------------------------](assets/purpleline.png)
+
+
+
+
+<h2 align="center">Repo Structure</h2>
+
+<table align="center">
+<tr>
+<td><strong><a href="./CLAM/">CLAM/</a></strong></td>
+<td>
+Data preprocessing and whole-slide tiling utilities based on CLAM<sup>[1]</sup>. 
+Includes custom artifact removal using HSV color-based segmentation and tiling pipelines for WSI patch extraction.
+
+<details>
+<summary>Example</summary>
+<img src="assets/artifact_removal_example_clam.png" width="1000">
+</details>
+
+</td>
+</tr> 
+
+<tr>
+<td><strong><a href="./gigapath/">gigapath/</a></strong></td>
+<td>
+Whole-slide histopathology embedding pipeline using the Prov-GigaPath foundation model<sup>[2]</sup>.
+Uses tiles generated from CLAM to compute slide-level embeddings.
+
+<details>
+<summary>Example</summary>
+<img src="assets/tiling_pca.png" width="900">
+</details>
+
+</td>
+</tr>
+
+<tr>
+<td><strong><a href="./NeuroVFM/">NeuroVFM/</a></strong></td>
+<td>
+MRI foundation model framework for multi-sequence brain MRI embedding<sup>[3]</sup>.
+Produces subject-level embeddings from T1, T1c, T2, and FLAIR sequences.
+</td>
+</tr>
+
+
+<tr>
+<td><strong><a href="./experiments/">experiments/</a></strong></td>
+<td>
+Scripts for multimodal embedding fusion and downstream tumor typing experiments, including modality ablation studies and evaluation pipelines.
+</td>
+</tr>
+</table>
+
+<br>
+
+<sub>
+[1] Lu, M.Y., Williamson, D.F.K., Chen, T.Y. et al. Data-efficient and weakly supervised computational pathology on whole-slide images. Nat Biomed Eng 5, 555–570 (2021).  <br>
+[2] Xu, Hanwen, et al. "A whole-slide foundation model for digital pathology from real-world data." Nature 630.8015 (2024): 181-188.   <br>
+[3] Kondepudi, Akhil, et al. "Health system learning achieves generalist neuroimaging models." arXiv preprint arXiv:2511.18640 (2025).
+</sub>
 
 ![-----------------------------------------------------](assets/purpleline.png)
 
@@ -111,63 +175,4 @@ Results are saved in a JSON file to the path provided in `--output_json`.
   }
 }
 ```
-
-
-
-
-![-----------------------------------------------------](assets/purpleline.png)
-
-
-
-
-
-<h2 align="center">Repo Structure</h2>
-
-<table align="center">
-<tr>
-<td><strong><a href="./CLAM/">CLAM/</a></strong></td>
-<td>
-Data preprocessing and whole-slide tiling utilities based on CLAM<sup>[1]</sup>. 
-Includes custom artifact removal using HSV color-based segmentation and tiling pipelines for WSI patch extraction.
-</td>
-</tr>
-
-<tr>
-<td><strong><a href="./gigapath/">gigapath/</a></strong></td>
-<td>
-Whole-slide histopathology embedding pipeline using the Prov-GigaPath foundation model<sup>[2]</sup>.
-Uses tiles generated from CLAM to compute slide-level embeddings.
-</td>
-</tr>
-
-<tr>
-<td><strong><a href="./NeuroVFM/">NeuroVFM/</a></strong></td>
-<td>
-MRI foundation model framework for multi-sequence brain MRI embedding<sup>[3]</sup>.
-Produces subject-level embeddings from T1, T1c, T2, and FLAIR sequences.
-</td>
-</tr>
-
-<tr>
-<td><strong><a href="./dataset_utils/">dataset_utils/</a></strong></td>
-<td>
-Dataset construction, subject matching, metadata processing, and split generation utilities.
-</td>
-</tr>
-
-<tr>
-<td><strong><a href="./experiments/">experiments/</a></strong></td>
-<td>
-Scripts for multimodal embedding fusion and downstream tumor typing experiments, including modality ablation studies and evaluation pipelines.
-</td>
-</tr>
-</table>
-
-<br>
-
-<sub>
-[1] Lu, M.Y., Williamson, D.F.K., Chen, T.Y. et al. Data-efficient and weakly supervised computational pathology on whole-slide images. Nat Biomed Eng 5, 555–570 (2021).  <br>
-[2] Xu, Hanwen, et al. "A whole-slide foundation model for digital pathology from real-world data." Nature 630.8015 (2024): 181-188.   <br>
-[3] Kondepudi, Akhil, et al. "Health system learning achieves generalist neuroimaging models." arXiv preprint arXiv:2511.18640 (2025).
-</sub>
 
