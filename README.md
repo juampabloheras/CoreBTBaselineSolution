@@ -46,14 +46,14 @@ Juampablo E. Heras Rivera†, Daniel K Low†, Wen-wai Yim, Jacob Ruzevick, Xavi
 
 <h2 align="center">Benchmark Overview</h2>
 
-### Data
+### Dataset
 
 | Component | Count | Description |
 |-----------|------:|-------------|
 | Patients | 310 | Glioma patients collected at the University of Washington (2023–2025) |
-| MRI volumes | 310 subjects | Multi-sequence brain MRI: T1, T1c, T2, FLAIR |
+| MRI volumes | 310 subjects | Each with up to 4 multi-sequence brain MRIs (T1, T1c, T2, FLAIR) |
 | Histopathology subjects | 95 | Patients with paired H&E whole-slide pathology images |
-| Whole-slide images (WSI) | 597 slides | Gigapixel histopathology slides (~5 per subject on average) |
+| Whole-slide images (WSI) | 597 slides | Gigapixel histopathology slides (~6 per subject on average) |
 | Pathology reports | 95 | Free-text neuropathology diagnostic reports |
 | Tumor masks | subset of MRI cases | Expert-corrected segmentation masks for edema, enhancing tumor, and necrotic core |
 
