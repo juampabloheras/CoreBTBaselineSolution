@@ -2,12 +2,12 @@
 #SBATCH --job-name=tile_embed_all
 #SBATCH --partition=ckpt
 #SBATCH --account=kurtlab
-#SBATCH --array=0-19
+#SBATCH --array=0-1
 #SBATCH --cpus-per-task=8
 #SBATCH --gpus-per-node=a40:1
 #SBATCH --mem=100G
 #SBATCH --time=48:00:00
-#SBATCH --chdir=/gscratch/kurtlab/models/gigapath/prov-gigapath
+#SBATCH --chdir=/gscratch/kurtlab/CoreBT/gigapath/prov-gigapath
 #SBATCH --output=logs/tile_embed/stdout/%A/tile_embed-%A_%a.out
 #SBATCH --error=logs/tile_embed/stderr/%A/tile_embed-%A_%a.err
 
@@ -29,7 +29,7 @@ DATA_H5_DIR=/gscratch/scrubbed/juampablo/corebt/corebt_clam_preprocessing/corebt
 DATA_SLIDE_DIR=/gscratch/scrubbed/juampablo/corebt/corebt_pathology
 CSV_PATH=/gscratch/scrubbed/juampablo/corebt/corebt_clam_preprocessing/corebt_tiles/process_list_autogen.csv
 FEAT_DIR=/gscratch/scrubbed/juampablo/corebt/corebt_clam_preprocessing/tile_embeddings
-NUM_SPLITS=20
+NUM_SPLITS=2
 SPLIT_NO=${SLURM_ARRAY_TASK_ID}
 
 

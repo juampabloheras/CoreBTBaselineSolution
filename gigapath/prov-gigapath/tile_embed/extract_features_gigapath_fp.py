@@ -125,16 +125,36 @@ if __name__ == '__main__':
 
         # 3. Load WSI and create DataLoader
         wsi = openslide.open_slide(slide_file_path)
-        dataset = Whole_Slide_Bag_FP(file_path=h5_file_path, wsi=wsi, img_transforms=img_transforms)
-        loader = DataLoader(dataset=dataset, batch_size=args.batch_size, **loader_kwargs)
+        try:
+            dataset = Whole_Slide_Bag_FP(file_path=h5_file_path, wsi=wsi, img_transforms=img_transforms)
+            loader = DataLoader(dataset=dataset, batch_size=args.batch_size, **loader_kwargs)
 
-        # 4. Extract and Save
-        compute_w_loader(output_h5_path, loader=loader, model=model, verbose=1)
+            # 4. Extract and Save
+            compute_w_loader(output_h5_path, loader=loader, model=model, verbose=1)
 
-        # 5. Save .pt file for downstream MIL training
-        with h5py.File(output_h5_path, "r") as f:
-            features = torch.from_numpy(f['features'][:])
-            torch.save(features, output_pt_path)
-            print(f"Saved features shape: {features.shape}")
+            # 5. Save .pt file for downstream MIL training
+            with h5py.File(output_h5_path, "r") as f:
+                features = torch.from_numpy(f['features'][:])
+                torch.save(features, output_pt_path)
+                print(f"Saved features shape: {features.shape}")
+
+        except Exception as e:
+                    print(f"Failed to process {slide_id}: {str(e)}")
+                    
+                    # Log to CSV (Subject ID, Error Type, Error Message)
+                    import csv
+                    import os
+                    
+                    log_path = os.path.join(args.feat_dir, f"failed_subjects_split{args.split_no}_numsplits{args.num_splits}.csv")
+                    file_exists = os.path.isfile(log_path)
+                    
+                    with open(log_path, 'a', newline='') as csvfile:
+                        writer = csv.writer(csvfile)
+                        if not file_exists:
+                            writer.writerow(['slide_id', 'error_type', 'error_msg'])
+                        writer.writerow([slide_id, type(e).__name__, str(e)])
+                    
+                    continue
+
 
 
