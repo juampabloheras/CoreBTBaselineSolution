@@ -55,16 +55,11 @@ For further reference, see the examples provided in the `dataset_csvs` directory
 > Note: Because K-fold CV is not implemented yet, the following scripts use the `train.csv` for both training and validation. 
 The code below will perform inference on the subjects in `TEST_CSV` and `TEST_MRI/TEST_HISTO`, so we pass in the validation subjects there to generate the predictions for those specific samples.
 
-### Shared variables
 
 ```bash
-CSV_DIR=/gscratch/kurtlab/CoreBT/experiments_mediqa/dataset_csvs
-EMBED_DIR=/gscratch/scrubbed/juampablo/corebt_dataset
-OUTPUT_DIR=/gscratch/kurtlab/CoreBT/experiments_mediqa/runs
-
-# Base Directories 
-CSV_DIR="dataset_csvs"
-EMBED_DIR="/gscratch/scrubbed/juampablo/corebt_dataset"
+CSV_DIR=experiments_mediqa/dataset_csvs
+EMBED_DIR=/path/to/corebt_dataset
+OUTPUT_DIR=experiments_mediqa/runs
 
 # Metadata CSV Paths 
 TRAIN_CSV="$CSV_DIR/train.csv"
