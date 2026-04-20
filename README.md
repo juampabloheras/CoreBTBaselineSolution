@@ -39,6 +39,10 @@ Juampablo E. Heras Rivera†, Daniel K Low†, Wen-wai Yim, Jacob Ruzevick, Xavi
 
 
 
+### Updates 
+- 4/20/2026: Added [`experiments_mediqa`](experiments_mediqa) directory with code to baseline solution for [ImageCLEFmed MEDIQA-CORE 2026: Brain Tumor Subtype Classification Challenge](https://ai4media-bench.aimultimedialab.ro/competitions/6/).
+
+
 
 
 ![-----------------------------------------------------](assets/purpleline.png)
